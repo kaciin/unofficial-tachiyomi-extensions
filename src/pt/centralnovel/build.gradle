@@ -1,0 +1,17 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
+ext {
+    extName = 'Central Novel'
+    pkgNameSuffix = 'pt.centralnovel'
+    extClass = '.CentralNovel'
+    extVersionCode = 1
+}
+
+dependencies {
+    implementation "com.github.Claudemirovsky:noveltomanga:42a2ffb"
+    implementation project(':lib-dataimage')
+    compileOnly 'androidx.preference:preference-ktx:1.2.0'
+}
+
+apply from: "$rootDir/common.gradle"
