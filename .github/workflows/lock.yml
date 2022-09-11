@@ -1,0 +1,16 @@
+name: Lock threads
+
+on:
+  # Manual trigger
+  workflow_dispatch:
+    inputs:
+
+jobs:
+  lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: dessant/lock-threads@v2
+        with:
+          github-token: ${{ github.token }}
+          issue-lock-inactive-days: '2'
+          pr-lock-inactive-days: '2'
